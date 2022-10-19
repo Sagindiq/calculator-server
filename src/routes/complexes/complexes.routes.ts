@@ -5,3 +5,4 @@ const complexRouter = Router()
 
 export default complexRouter
     .get('/complexes', complexController.GET)
+    .post('/new-complex', complexController.POST)

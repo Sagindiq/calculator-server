@@ -18,9 +18,18 @@ export default {
             return next(new ErrorHandler(error.message, 400))
         }
 
-        const { company_name } = value
+        const { company_image, company_name } = value
 
-        // const addCompany = 
+        const newCompany: object = await dataSource.createQueryBuilder()
+            .insert()
+            .into(Companies)
+            .values({
+                company_image,
+                company_name
+            })
+            .execute()
+
+        return res.json(newCompany)
 
     }
 }
