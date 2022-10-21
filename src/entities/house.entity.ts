@@ -2,10 +2,10 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { Complexes } from "./complex.entity";
 
 @Entity({
-    name: 'rooms'
+    name: 'houses'
 })
 
-export class Rooms {
+export class Houses {
     @PrimaryGeneratedColumn('uuid')
     id: string
 
@@ -19,7 +19,7 @@ export class Rooms {
         type: 'integer',
         nullable: false
     })
-    room_size: number;
+    house_size: number;
 
     @Column({
         type: 'bigint',
@@ -33,6 +33,6 @@ export class Rooms {
     })
     address: string
 
-    @ManyToOne(() => Complexes, cx => cx.room)
+    @ManyToOne(() => Complexes, cx => cx.house)
     complex: Complexes
 }

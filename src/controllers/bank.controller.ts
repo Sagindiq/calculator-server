@@ -8,5 +8,11 @@ export default {
         const allBanks = await dataSource.getRepository(Banks).find().catch(err => next(new ErrorHandler(err.message, 503)))
 
         if(allBanks) res.json(allBanks)
+    },
+
+    POST: async(req: Request, res: Response, next: NextFunction) => {
+
+        
+
     }
 }

@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm"
 import { Companies } from "./companies.entity";
-import { Rooms } from "./rooms.entity";
+import { Houses } from "./house.entity";
 
 @Entity({
     name: 'complexes'
@@ -20,6 +20,6 @@ export class Complexes {
     @ManyToOne(() => Companies, c => c.complex)
     Company: Companies;
 
-    @OneToMany(() => Rooms, r => r.complex)
-    room: Rooms 
+    @OneToMany(() => Houses, h => h.complex)
+    house: Houses 
 }
