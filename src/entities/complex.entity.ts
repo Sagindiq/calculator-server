@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn } from "typeorm"
 import { Companies } from "./companies.entity";
 import { Houses } from "./house.entity";
 
@@ -18,8 +18,9 @@ export class Complexes {
     complex_name: string
 
     @ManyToOne(() => Companies, c => c.complex)
-    Company: Companies;
+    company: Companies;
 
     @OneToMany(() => Houses, h => h.complex)
-    house: Houses 
+    @JoinColumn()
+    house: Houses[]
 }

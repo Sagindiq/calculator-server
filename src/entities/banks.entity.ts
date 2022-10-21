@@ -1,5 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-import { BankCredits } from "./bankCredits.entity";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity({
     name: 'banks'
@@ -26,8 +25,23 @@ export class Banks {
         type: 'bigint',
         default: 2500000
     })
-    bank_service: bigint
+    bank_service: bigint;
 
-    @OneToMany(() => BankCredits, bc => bc.bank)
-    bank_credit: BankCredits
+    @Column({
+        type: 'integer',
+        nullable: false
+    })
+    mortgage_duration: number;
+
+    @Column({
+        type: 'bigint',
+        nullable: false
+    })
+    max_mortgage: number;
+
+    @Column({
+        type: 'integer',
+        nullable: false
+    })
+    starting_payment: number
 }

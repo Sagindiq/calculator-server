@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, JoinColumn } from 'typeorm'
 import { Complexes } from './complex.entity';
 
 @Entity({
@@ -22,6 +22,7 @@ export class Companies {
     })
     company_image: string
 
-    @OneToMany(() => Complexes, cx => cx.Company)
-    complex: Complexes
+    @OneToMany(() => Complexes, cx => cx.company)
+    @JoinColumn()
+    complex: Complexes[]
 }
