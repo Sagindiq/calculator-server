@@ -7,3 +7,8 @@ export const housePostValidation = joi.object().keys({
     address: joi.string().required(),
     complex_id: joi.string().required()
 })
+
+export const houseGetValidation = joi.object().keys({
+    room_count: joi.number().required(),
+    complex_id: joi.string().required()
+})
