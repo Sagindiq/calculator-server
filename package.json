@@ -2,10 +2,12 @@
   "name": "exam-maket",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/server.ts",
-    "start": "tsc && node ./dist/src/server.js"
+    "build": "tsc",
+    "start": "node ./dist/src/server.js"
   },
   "keywords": [],
   "author": "",
