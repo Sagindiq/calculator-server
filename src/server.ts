@@ -4,6 +4,7 @@ import { dataSource } from './config/ormconfig'
 import { errorHandle } from './middlewares/error.middleware'
 import router from './routes/router'
 import cors from 'cors'
+const PORT = process.env.PORT || 9000
 
 dataSource.initialize().then(() => console.log('Connected'))
 
@@ -17,6 +18,6 @@ app.use(errorHandle)
 
 app.all('/*', (req: Request, res: Response, next: NextFunction) => res.sendStatus(404))
 
-app.listen(9000, (): void => {
-    console.log(9000)
+app.listen(PORT, (): void => {
+    console.log(PORT)
 })
