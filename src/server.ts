@@ -17,6 +17,6 @@ app.use(errorHandle)
 
 app.all('/*', (req: Request, res: Response, next: NextFunction) => res.sendStatus(404))
 
-app.listen(process.env.PORT || 9000, (): void => {
-    console.log(process.env.PORT || 9000)
+app.listen(9000, (): void => {
+    console.log(9000)
 })
