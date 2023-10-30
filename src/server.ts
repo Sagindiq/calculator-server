@@ -4,6 +4,8 @@ import { dataSource } from './config/ormconfig'
 import { errorHandle } from './middlewares/error.middleware'
 import router from './routes/router'
 import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config()
 const PORT = process.env.PORT || 9000
 
 dataSource.initialize().then(() => console.log('Connected'))
